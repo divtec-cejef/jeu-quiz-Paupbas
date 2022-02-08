@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style général de l'application -->
+    <style name="Theme.jeu" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customisation du thème-->
+    </style>
+</resources>
