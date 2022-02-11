@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">Jeu-quiz</string>
+    <!--Nom interne-->
+    <string name="app_name">Speedquiz</string>
+    <!-- Ecran d'accueil -->
+        <!-- Menu-->
+        <string name="action_settings">Settings</string>
+        <string name="action_question">Add a question</string>
+        <string name="main_button_player">Add player</string>
+            <!--Setting-->
+            <string name="settings_timeQuestion">Response time </string>
+            <string name="settings_switch_nightMode">Night mod</string>
+            <string name="settings_button_save">Save</string>
+            <string name="settings_button_close">Close</string>
+            <!--Questions-->
+            <string name="questions_titre"> Add a question</string>
+                <!-- TextInput-->
+                <string name="questions_textInput">Questions</string>
+    <!-- TextInput-->
+    <string name="main_textInput_player">Nom</string>
+    <!-- Ecran de jeu-->
 </resources>

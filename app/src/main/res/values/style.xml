@@ -1,7 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Style général de l'application -->
     <style name="Theme.jeu" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customisation du thème-->
+        <item name="colorPrimary">@color/Cyan</item>
+        <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="switchStyle">@style/Widget.App.Switch</item>
     </style>
+
+    <!--Button-->
+        <style name="Widget.App.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+            <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>
+        </style>
+
+        <style name="Widget.App.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+            <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>
+        </style>
+
+        <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+            <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button</item>
+        </style>
+
+        <!--Theme Button-->
+            <style name="ThemeOverlay.App.Button.TextButton" parent="">
+                <item name="colorPrimary">@color/black</item>
+            </style>
+
+            <style name="ThemeOverlay.App.Button" parent="">
+                <item name="colorPrimary">@color/Cyan</item>
+                <item name="colorOnPrimary">@color/white</item>
+            </style>
+
+    <!--Style pour les input text-->
+        <style name="Widget.App.TextInputLayout.player" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <item name="boxStrokeColor">@color/Cyan</item>
+            <item name="hintTextColor">@color/purple_200</item>
+            <item name="hintTextAppearance">@style/TextAppearence.App.TextInputLayout.HintText</item>
+            <item name="suffixText">@string/main_textInput_player</item>
+        </style>
+
+        <style name="Widget.App.TextInputLayout.questions" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <item name="boxStrokeColor">@color/Cyan</item>
+            <item name="hintTextColor">@color/purple_200</item>
+            <item name="hintTextAppearance">@style/TextAppearence.App.TextInputLayout.HintText</item>
+            <item name="suffixText">@string/questions_textInput</item>
+        </style>
+            <!--Style pour l'input text-->
+            <style name="TextAppearence.App.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+                <item name="android:textColor">@color/purple_200</item>
+            </style>
+
+    <!--Settings-->
+    <style name="Widget.App.Settings" parent="">
+        <item name="backgroundColor">@color/Cyan</item>
+    </style>
+
+        <!--Slider-->
+        <style name="Widget.App.Slider" parent="Widget.MaterialComponents.Slider">
+
+        </style>
+
+        <!--Switch-->
+        <style name="Widget.App.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+            <item name="colorOnSurface">@color/black</item>
+            <item name="colorSecondary">@color/white</item>
+        </style>
+
+        <!--Button Close-->
+        <style name="Widget.App.Button.Close" parent="Widget.MaterialComponents.Button">
+            <item name="colorPrimary">@color/Red</item>
+            <item name="colorOnPrimary">@color/white</item>
+        </style>
+
+            <!--Theme Button Close-->
+            <style name="ThemeOverlay.App.Button.Close" parent="">
+
+            </style>
 </resources>

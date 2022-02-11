@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Nom interne-->
+    <string name="app_name">Speedquiz</string>
+    <!-- Ecran d'accueil -->
+        <!-- Menu-->
+        <string name="action_settings">Paramètres</string>
+        <string name="action_question">Ajouter une question</string>
+        <string name="main_button_player">Ajouter un joueur</string>
+            <!--Setting-->
+            <string name="settings_timeQuestion">Temps de réponce</string>
+            <string name="settings_switch_nightMode">Mod nuit</string>
+            <string name="settings_button_save">Enregistrer</string>
+            <string name="settings_button_close">fermer</string>
+            <!--Questions-->
+            <string name="questions_titre">Ajouter une question</string>
+                <!-- TextInput-->
+                <string name="questions_textInput">Questions</string>
+    <!-- TextInput-->
+    <string name="main_textInput_player">Nom</string>
+    <!-- Ecran de jeu-->
+</resources>
