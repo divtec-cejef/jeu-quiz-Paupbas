@@ -8,7 +8,7 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/action_question"
+        android:id="@+id/action_questions"
         android:title="@string/action_question"
         app:showAsAction="never"/>
 </menu>

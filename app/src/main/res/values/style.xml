@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.jeu" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.jeu.night" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/Cyan</item>
         <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>
         <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>
@@ -76,4 +76,5 @@
             <style name="ThemeOverlay.App.Button.Close" parent="">
 
             </style>
+
 </resources>

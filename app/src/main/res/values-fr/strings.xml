@@ -7,11 +7,12 @@
         <string name="action_settings">Paramètres</string>
         <string name="action_question">Ajouter une question</string>
         <string name="main_button_player">Ajouter un joueur</string>
+        <string name="main_button_play">Jouer</string>
             <!--Setting-->
-            <string name="settings_timeQuestion">Temps de réponce</string>
-            <string name="settings_switch_nightMode">Mod nuit</string>
+            <string name="settings_timeQuestion">Temps de réponse</string>
+            <string name="settings_switch_nightMode">Mode nuit</string>
             <string name="settings_button_save">Enregistrer</string>
-            <string name="settings_button_close">fermer</string>
+            <string name="settings_button_close">Fermer</string>
             <!--Questions-->
             <string name="questions_titre">Ajouter une question</string>
                 <!-- TextInput-->
@@ -19,4 +20,5 @@
     <!-- TextInput-->
     <string name="main_textInput_player">Nom</string>
     <!-- Ecran de jeu-->
+    <string name="game_button_play">Vrai</string>
 </resources>

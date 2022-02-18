@@ -6,6 +6,7 @@
         <string name="action_settings">Settings</string>
         <string name="action_question">Add a question</string>
         <string name="main_button_player">Add player</string>
+        <string name="main_button_play">Play</string>
             <!--Setting-->
             <string name="settings_timeQuestion">Response time </string>
             <string name="settings_switch_nightMode">Night mod</string>
@@ -18,4 +19,5 @@
     <!-- TextInput-->
     <string name="main_textInput_player">Nom</string>
     <!-- Ecran de jeu-->
+    <string name="game_button_play">True</string>
 </resources>
