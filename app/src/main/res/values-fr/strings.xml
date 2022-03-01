@@ -18,7 +18,12 @@
                 <!-- TextInput-->
                 <string name="questions_textInput">Questions</string>
     <!-- TextInput-->
-    <string name="main_textInput_player">Nom</string>
+    <string name="main_textInput_player1">Joueur 1</string>
+    <string name="main_textInput_player2">Joueur 2</string>
+    <string name="main_textInputpref_player">Nom</string>
     <!-- Ecran de jeu-->
     <string name="game_button_play">Vrai</string>
+    <string name="game_result_win">Gagner</string>
+    <string name="game_result_loose">Perdu</string>
+    <string name="game_result_egalite">Egalité</string>
 </resources>

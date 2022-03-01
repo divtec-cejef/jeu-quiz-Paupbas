@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Main-->
     <dimen name="main_text_size">25sp</dimen>
     <dimen name="main_component_space">10dp</dimen>
+    <!--Game-->
+    <dimen name="game_text_score">50dp</dimen>
+    <dimen name="game_text_size_score">100sp</dimen>
 </resources>

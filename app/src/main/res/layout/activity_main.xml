@@ -154,9 +154,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_margin="10dp"
-        android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/Main_appBarLayout"
-        android:hint="@string/main_textInput_player">
+        android:hint="@string/main_textInput_player1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/main_textInput_player1"
@@ -165,8 +164,7 @@
             android:textAlignment="center"
             android:textSize="@dimen/main_text_size"
             android:inputType="textShortMessage"
-            android:maxLines="1"
-            android:textColor="@color/white"/>
+            android:maxLines="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -179,7 +177,7 @@
         android:layout_margin="10dp"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/main_textInputLayout1"
-        android:hint="@string/main_textInput_player">
+        android:hint="@string/main_textInput_player2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/main_textInput_player2"
@@ -188,21 +186,9 @@
             android:textAlignment="center"
             android:textSize="@dimen/main_text_size"
             android:inputType="textShortMessage"
-            android:maxLines="1"
-            android:textColor="@color/white"/>
+            android:maxLines="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/main_button_addPlayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_button_player"
-        android:textSize="@dimen/main_text_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Main_appBarLayout"/>
 
     <Button
         android:id="@+id/main_button_play"
@@ -211,7 +197,7 @@
         android:text="@string/main_button_play"
         android:textSize="@dimen/main_text_size"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/main_button_addPlayer"
+        app:layout_constraintTop_toBottomOf="@+id/main_textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

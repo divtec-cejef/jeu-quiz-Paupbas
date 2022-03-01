@@ -35,21 +35,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/game_page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_buttonTrue1"
         android:rotation="180"
         android:text="Nom joueur1"
         android:textSize="@dimen/main_text_size"/>
+
+    <TextView
+        android:id="@+id/game_score1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/game_player1"
+        android:layout_marginTop="@dimen/game_text_score"
+        android:rotation="180"
+        android:text="0"
+        android:textSize="@dimen/game_text_size_score"/>
 
     <TextView
         android:id="@+id/game_player2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/game_page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/game_buttonTrue2"
         android:text="Nom joueur2"
         android:textSize="@dimen/main_text_size"/>
+
+    <TextView
+        android:id="@+id/game_score2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/game_player2"
+        android:layout_marginBottom="@dimen/game_text_score"
+        android:text="0"
+        android:textSize="@dimen/game_text_size_score"/>
+
 
     <TextView
         android:id="@+id/game_question2"

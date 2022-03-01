@@ -36,7 +36,7 @@
             <item name="boxStrokeColor">@color/Cyan</item>
             <item name="hintTextColor">@color/purple_200</item>
             <item name="hintTextAppearance">@style/TextAppearence.App.TextInputLayout.HintText</item>
-            <item name="suffixText">@string/main_textInput_player</item>
+            <item name="suffixText">@string/main_textInputpref_player</item>
         </style>
 
         <style name="Widget.App.TextInputLayout.questions" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
