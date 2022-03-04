@@ -32,12 +32,20 @@ public class GameActivity extends AppCompatActivity {
     private TextView TV_score2;
     private int score2;
 
+    //Interface
+    private Button BT_replay;
+    private Button BT_menu;
+
+    //Question
     QuestionManager manager;
     private List<Question> questionList;
+    private Question questionActuel;
 
     Runnable questionRunnable = null;
-    private int TIMER_MILLIS_QUESTION_DELAY = 3000;
-    private int TIMER_MILLIS_ITERATION_START = 2000;
+
+    //Global
+    private final int TIMER_MILLIS_QUESTION_DELAY = 2000;
+    private final int TIMER_MILLIS_ITERATION_START = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,47 +67,160 @@ public class GameActivity extends AppCompatActivity {
         TV_question2   = findViewById(R.id.game_question2);
         TV_score2      = findViewById(R.id.game_score2);
 
+        //Interface
+        BT_replay      = findViewById(R.id.game_replay);
+        BT_menu        = findViewById(R.id.game_menu);
+
         Intent intent = getIntent();
 
+        //Récupère les noms des joueurs
         String player1 = intent.getExtras().getString("player1");
         String player2 = intent.getExtras().getString("player2");
 
+        //Affiche les noms des joueurs
         TV_player1.setText(player1);
         TV_player2.setText(player2);
 
-         manager = new QuestionManager(GameActivity.this);
-         questionList = manager.getQuestionList();
+        manager = new QuestionManager(GameActivity.this);
+        questionList = manager.getQuestionList();
 
+        /**
+         * Réinitialise les champs pour rejouer une partie
+         */
+        BT_replay.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 score1 = 0;
+                 score2 = 0;
 
+                 TV_score1.setText(Integer.toString(score1));
+                 TV_score2.setText(Integer.toString(score2));
+
+                 TV_question1.setTextSize(R.dimen.main_text_size);
+                 TV_question1.setTextColor(getColor(R.color.black));
+                 TV_question2.setTextSize(R.dimen.main_text_size);
+                 TV_question2.setTextColor(getColor(R.color.black));
+
+                 BT_menu.setVisibility(View.GONE);
+                 BT_replay.setVisibility(View.GONE);
+
+                 manager = new QuestionManager(GameActivity.this);
+                 questionList = manager.getQuestionList();
+
+                 timerQuestion();
+             }
+         });
+
+        /**
+         * Retourne a la page d'accueil
+         */
+         BT_menu.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                 startActivity(intent);
+             }
+         });
+
+        /**
+         * Bouton vrai du joueur 1
+         */
+        BT_true1.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 BT_true2.setClickable(false);
+                 if (questionActuel.getReponse() == 1)
+                     score1++;
+                 else
+                    if(score1 != 0 )
+                        score1--;
+
+                 TV_score1.setText(Integer.toString(score1));
+                 BT_true1.setClickable(false);
+             }
+         });
+
+        /**
+         * Bouton vrai du joueur 2
+         */
+         BT_true2.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 BT_true1.setClickable(false);
+                 if (questionActuel.getReponse() == 1)
+                     score2++;
+                 else
+                    if(score2 != 0 )
+                        score2--;
+
+                 TV_score2.setText(Integer.toString(score2));
+                 BT_true2.setClickable(false);
+             }
+         });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
+        timerQuestion();
+    }
 
+    /**
+     * Affiche les question tirées aléatoirement dans la base de données
+     */
+    private void timerQuestion() {
 
-        Handler handler = new Handler();
+     Handler handler = new Handler();
+     questionRunnable = new Runnable() {
+         //Timer des questions
+         @Override
+         public void run() {
+             if(questionList.size() == 0){
+                 handler.removeCallbacks(this);
+                 //A la fin du timer
+                 //Bloque les boutons
+                 BT_true1.setClickable(false);
+                 BT_true2.setClickable(false);
 
-        questionRunnable = new Runnable() {
-            @Override
-            public void run() {
-                if(questionList.size() == 0){
-                    //DO_CODE_LAST_QUESTION
+                 //Affiche les résultats
+                 if(score1 > score2) {
+                     TV_question1.setText(getString(R.string.game_result_win));
+                     TV_question1.setTextColor(getColor(R.color.Green));
+                     TV_question2.setText(R.string.game_result_loose);
+                     TV_question2.setTextColor(getColor(R.color.Red));
+                 } else if(score2 > score1) {
+                     TV_question2.setText(getString(R.string.game_result_win));
+                     TV_question2.setTextColor(getColor(R.color.Green));
+                     TV_question1.setText(R.string.game_result_loose);
+                     TV_question1.setTextColor(getColor(R.color.Red));
+                 } else {
+                     TV_question1.setText(getString(R.string.game_result_egalite));
+                     TV_question2.setText(R.string.game_result_egalite);
+                 }
+                 TV_question1.setTextSize(40);
+                 TV_question2.setTextSize(40);
 
-                    handler.removeCallbacks(this);
-                    //DO_OTHER_EXIT_CODE
-                    if(score1 > score2)
-                        TV_question1.setText("@string);
-                }else{
-                    //DO_CODE_QUESTION_ITERATION
-                    Question randomQuestion = manager.getRandomQuestion(questionList);
-                    TV_question1.setText(randomQuestion.getQuestion());
-                    TV_question2.setText(randomQuestion.getQuestion());
-                    handler.postDelayed(this,TIMER_MILLIS_QUESTION_DELAY);
-                }
-            }
-        };
+                 //Affiche les boutons d'interface
+                 BT_replay.setVisibility(View.VISIBLE);
+                 BT_menu.setVisibility(View.VISIBLE);
+
+             }else{
+                 //Code pour chaque itération du timer
+
+                 //Affiche une question aléatoire
+                 questionActuel = manager.getRandomQuestion(questionList);
+                 TV_question1.setText(questionActuel.getQuestion());
+                 TV_question2.setText(questionActuel.getQuestion());
+
+                 //Active les boutons vrai
+                 BT_true1.setClickable(true);
+                 BT_true2.setClickable(true);
+
+                 handler.postDelayed(this,TIMER_MILLIS_QUESTION_DELAY);
+             }
+         }
+     };
         handler.postDelayed(questionRunnable,TIMER_MILLIS_ITERATION_START);
     }
 }

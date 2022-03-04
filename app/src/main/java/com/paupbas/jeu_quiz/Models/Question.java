@@ -2,6 +2,9 @@ package com.paupbas.jeu_quiz.Models;
 
 import android.database.Cursor;
 
+/**
+ * Représente une question
+ */
 public class Question {
 
     private  String question;
@@ -25,9 +28,16 @@ public class Question {
         reponse = cursor.getInt(cursor.getColumnIndexOrThrow("reponse"));
     }
 
+    /**
+     * @return la question
+     */
     public String getQuestion() {
         return question;
     }
+
+    /**
+     * @return la réponse
+     */
     public int getReponse() {
         return reponse;
     }

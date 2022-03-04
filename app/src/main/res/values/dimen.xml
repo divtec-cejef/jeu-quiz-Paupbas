@@ -3,7 +3,8 @@
     <!--Main-->
     <dimen name="main_text_size">25sp</dimen>
     <dimen name="main_component_space">10dp</dimen>
+    <dimen name="main_component_space_player">50dp</dimen>
     <!--Game-->
-    <dimen name="game_text_score">50dp</dimen>
+    <dimen name="game_text_score">80dp</dimen>
     <dimen name="game_text_size_score">100sp</dimen>
 </resources>

@@ -22,6 +22,8 @@
     <string name="main_textInputpref_player">Name</string>
     <!-- Ecran de jeu-->
     <string name="game_button_play">True</string>
+    <string name="game_button_replay">Replay</string>
+    <string name="game_button_menu">Menu</string>
     <string name="game_result_win">Win</string>
     <string name="game_result_loose">Loose</string>
     <string name="game_result_egalite">Eqalite</string>

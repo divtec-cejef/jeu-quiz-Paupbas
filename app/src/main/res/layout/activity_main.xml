@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         app:layout_constraintTop_toBottomOf="@id/Main_appBarLayout"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:background="@color/black"
         style="@style/Widget.App.Settings">
 
@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         app:layout_constraintTop_toBottomOf="@id/Main_appBarLayout"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:background="@color/black"
         style="@style/Widget.App.Settings">
 
@@ -152,7 +152,7 @@
         style="@style/Widget.App.TextInputLayout.player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="@dimen/main_component_space_player"
         android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@id/Main_appBarLayout"
         android:hint="@string/main_textInput_player1">
@@ -173,7 +173,7 @@
         style="@style/Widget.App.TextInputLayout.player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/main_component_space_player"
         android:layout_margin="10dp"
         android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/main_textInputLayout1"
@@ -197,6 +197,7 @@
         android:text="@string/main_button_play"
         android:textSize="@dimen/main_text_size"
         android:visibility="invisible"
+        android:layout_marginTop="@dimen/main_component_space_player"
         app:layout_constraintTop_toBottomOf="@+id/main_textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

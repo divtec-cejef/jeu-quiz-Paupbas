@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/main_component_space"
         android:rotation="180"
-        android:text="Question"
+        android:text=""
         android:textSize="@dimen/main_text_size"/>
 
     <TextView
@@ -51,6 +51,17 @@
         android:text="0"
         android:textSize="@dimen/game_text_size_score"/>
 
+    <Button
+        android:id="@+id/game_replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/game_player1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:layout_marginStart="70dp"
+        android:text="@string/game_button_replay"/>
+
     <TextView
         android:id="@+id/game_player2"
         android:layout_width="wrap_content"
@@ -70,6 +81,16 @@
         android:text="0"
         android:textSize="@dimen/game_text_size_score"/>
 
+    <Button
+        android:id="@+id/game_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/game_player2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:layout_marginEnd="70dp"
+        android:text="@string/game_button_menu"/>
 
     <TextView
         android:id="@+id/game_question2"
@@ -79,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginBottom="@dimen/main_component_space"
-        android:text="Question"
+        android:text=""
         android:textSize="@dimen/main_text_size"/>
 
     <Button

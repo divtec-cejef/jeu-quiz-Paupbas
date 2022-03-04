@@ -23,19 +23,21 @@ import com.paupbas.jeu_quiz.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Settings
     private RelativeLayout settings;
+    private Button BT_closeSettings;
+    private SwitchMaterial SW_nightMode;
+
+    //Question
     private RelativeLayout questions;
+    private Button BT_closeQuestions;
+
+    //Accueil
     private Button BT_play;
     private TextInputLayout TIL_playerLayout1;
     private EditText ET_Player1;
     private TextInputLayout TIL_playerLayout2;
     private EditText ET_Player2;
-    private Button BT_closeSettings;
-    private Button BT_closeQuestions;
-    private SwitchMaterial SW_nightMode;
-
-    private String joueur1;
-    private String joueur2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        /**
+         * Affiche un deuxième joueur lors de la saisi du premier
+         */
         ET_Player1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -78,9 +83,17 @@ public class MainActivity extends AppCompatActivity {
                     TIL_playerLayout2.setVisibility(View.VISIBLE);
             }
             @Override
-            public void afterTextChanged(Editable editable) {}
+            public void afterTextChanged(Editable editable) {
+                if (!ET_Player1.getText().toString().isEmpty() && !ET_Player2.getText().toString().isEmpty())
+                    BT_play.setVisibility(View.VISIBLE);
+                else
+                    BT_play.setVisibility(View.GONE);
+            }
         });
 
+        /**
+         * Affiche le bouton jouer lors de la saisi du deuxième joueur
+         */
         ET_Player2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
@@ -90,20 +103,29 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                BT_play.setVisibility(View.VISIBLE);
+                if (!ET_Player1.getText().toString().isEmpty() && !ET_Player2.getText().toString().isEmpty())
+                    BT_play.setVisibility(View.VISIBLE);
+                else
+                    BT_play.setVisibility(View.GONE);
             }
         });
 
+        /**
+         * Ouvre la page de jeu et fournit les noms des joueurs
+         */
         BT_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GameActivity.class);
-                intent.putExtra("player1", ET_Player1.getText().toString());
-                intent.putExtra("player2", ET_Player2.getText().toString());
-                startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(), GameActivity.class);
+                    intent.putExtra("player1", ET_Player1.getText().toString());
+                    intent.putExtra("player2", ET_Player2.getText().toString());
+                    startActivity(intent);
             }
         });
 
+        /**
+         * Active le style nuit ou pas
+         */
         SW_nightMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,20 +148,18 @@ public class MainActivity extends AppCompatActivity {
         BT_closeSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                settings.setVisibility(View.INVISIBLE);
+                settings.setVisibility(View.GONE);
                 ET_Player1.setVisibility(View.VISIBLE);
                 ET_Player2.setVisibility(View.VISIBLE);
-                BT_play.setVisibility(View.VISIBLE);
             }
         });
 
         BT_closeQuestions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questions.setVisibility(View.INVISIBLE);
+                questions.setVisibility(View.GONE);
                 ET_Player1.setVisibility(View.VISIBLE);
                 ET_Player2.setVisibility(View.VISIBLE);
-                BT_play.setVisibility(View.VISIBLE);
             }
         });
     }

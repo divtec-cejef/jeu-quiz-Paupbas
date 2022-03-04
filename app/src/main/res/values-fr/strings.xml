@@ -23,6 +23,8 @@
     <string name="main_textInputpref_player">Nom</string>
     <!-- Ecran de jeu-->
     <string name="game_button_play">Vrai</string>
+    <string name="game_button_replay">Rejouer</string>
+    <string name="game_button_menu">Menu</string>
     <string name="game_result_win">Gagner</string>
     <string name="game_result_loose">Perdu</string>
     <string name="game_result_egalite">Egalité</string>

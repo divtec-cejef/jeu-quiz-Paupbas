@@ -21,8 +21,13 @@ public class SpeedQuizSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO quiz VALUES(1,\"La première guerre mondial c'est terminée en 1945\", 0)");
         db.execSQL("INSERT INTO quiz VALUES(2,\"Alan Turing est le créateur de la machine énigma\", 0)");
         db.execSQL("INSERT INTO quiz VALUES(3,\"La Suisse n'est pas dans l'union européen\", 1)");
-        db.execSQL("INSERT INTO quiz VALUES(4,\"Marios bros est le premier jeu de mario\", 1)");
+        db.execSQL("INSERT INTO quiz VALUES(4,\"Marios bros est le premier jeu de mario\", 0)");
         db.execSQL("INSERT INTO quiz VALUES(5,\"La Playstation 2 est la console la plus vendu\", 1)");
+        db.execSQL("INSERT INTO quiz VALUES(6,\"Tetris est un jeu créé par un suisse\", 0)");
+        db.execSQL("INSERT INTO quiz VALUES(7,\"La Dreamcast est la dernière console de Sega\", 1)");
+        db.execSQL("INSERT INTO quiz VALUES(8,\"La terre est plate\", 0)");
+        db.execSQL("INSERT INTO quiz VALUES(9,\"Tezuka est le père du manga moderne\", 1)");
+        db.execSQL("INSERT INTO quiz VALUES(10,\"Luffy veut devenir hokage\", 0)");
     }
 
     @Override

@@ -29,6 +29,7 @@
             <style name="ThemeOverlay.App.Button" parent="">
                 <item name="colorPrimary">@color/Cyan</item>
                 <item name="colorOnPrimary">@color/white</item>
+                <item name="android:textSize">@dimen/main_text_size</item>
             </style>
 
     <!--Style pour les input text-->
