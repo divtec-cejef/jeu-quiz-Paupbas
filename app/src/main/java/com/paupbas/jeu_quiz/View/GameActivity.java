@@ -200,6 +200,7 @@ public class GameActivity extends AppCompatActivity {
                  }
                  TV_question1.setTextSize(40);
                  TV_question2.setTextSize(40);
+                 manager = new QuestionManager(GameActivity.this);
 
                  //Affiche les boutons d'interface
                  BT_replay.setVisibility(View.VISIBLE);

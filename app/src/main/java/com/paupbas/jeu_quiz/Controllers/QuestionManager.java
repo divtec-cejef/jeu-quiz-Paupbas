@@ -33,6 +33,11 @@ public class QuestionManager {
         return rand.nextInt(questionList.size());
     }
 
+    /**
+     * Donne une question aléatoire de la liste et la supprime
+     * @param questionList liste de question récupérer depuis la base de données
+     * @return Une question
+     */
     public Question getRandomQuestion(List<Question> questionList){
         int randomIndex = getIndexQuestion(questionList);
         Question question = questionList.get(randomIndex);
